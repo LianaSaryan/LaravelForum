@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        //$this->middleware('can:update,project')->except(['index','create','store']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,10 +43,14 @@ class PostsController extends Controller
     public function store(Request $request)
     {
 
-        Post::create(request()->validate([
+        $attributes = request()->validate([
             'title' => ['required', 'min:3'],
             'body' => ['required', 'min:3'],
-        ]));
+        ]);
+
+        $attributes['owner_id'] = auth()->id();
+        
+        Post::create($attributes);
 
         return redirect('/posts');
     }

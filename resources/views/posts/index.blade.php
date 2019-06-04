@@ -13,4 +13,8 @@
 		<br>{{ $post-> body }}
 	</div>	
 	@endforeach
+
+	<p>
+		<a href="/posts/create">Create Post</a>
+	</p>
 @endsection

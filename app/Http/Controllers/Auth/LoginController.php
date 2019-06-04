@@ -36,4 +36,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function authenticated()
+    {
+        if(auth()->user())
+        {
+            return redirect('/posts');
+        } 
+
+    }
+    // public function showLoginForm()
+    // {
+    //     return view('posts.index');
+    // }
 }

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,9 +15,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('owner_id');
             $table->string('title');
             $table->text('body');
             $table->timestamps();
+
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
