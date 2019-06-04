@@ -7,17 +7,43 @@
 
 		{{ csrf_field() }}
 
-		<div>
-			<input type="text" name="title" placeholder="Post title">
+		<div class="field">
+
+			 <label class="label" for="title">Post Title</label>
+
+			 <div class="control">
+
+			    <input type="text" class="input {{ $errors->has('title') ? 'is-danger' : '' }}"  name="title" value="{{ old('title') }}" required>
+
+			  </div>
+			
 		</div>
 
-		<div>
-			<textarea name="body" placeholder="Post Body"></textarea>
+		<div class="field">
+
+			 <label class="label" for="body">Post Body</label>
+
+			 <div class="control">
+
+			    <textarea name="body" class="textarea {{ $errors->has('body') ? 'is-danger' : '' }}" required>{{ old('description') }}</textarea>
+
+			  </div>
+			
 		</div>
 
-		<div>
-			<button type="submit">Create Post</button>
+
+		<div class="field">
+
+			 <div class="control">
+
+			 	  <button type="submit" class="button is-link">Create Post</button>
+
+			 </div>
+
 		</div>
+
+		@include('errors')
+
 	</form>
 
 @endsection

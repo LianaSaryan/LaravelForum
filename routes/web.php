@@ -17,6 +17,11 @@ Route::get('/', function () {
 
 
 Route::resource('posts', 'PostsController');
+
+Route::delete('/comments/{comment}', 'PostCommentsController@destroy');
+
+Route::post('posts/{post}/comments', 'PostCommentsController@store');
+
 /*
 Route::get('/posts', 'PostsController@index');
 Route::post('/posts', 'PostsController@store');

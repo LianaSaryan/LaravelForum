@@ -6,13 +6,13 @@
 	<form method="POST" action="/posts/{{ $post->id }}" style="margin-bottom: 1em;">
 		@method('PATCH')
 		@csrf
-		<div class="field">
+		<div class="container">
 
 				 <label class="label" for="title">Title</label>
 
 				 <div class="control">
 
-				    <input type="text" class="input" name="title" placeholder="Title" value="{{ $post->title }}">
+				    <input type="text" class="input" name="title" placeholder="Title" value="{{ $post->title }}" required>
 
 				  </div>
 				
@@ -24,7 +24,7 @@
 
 				 <div class="control">
 
-				    <textarea name="body" class="textarea">{{$post->body}}</textarea>
+				    <textarea name="body" class="textarea" required>{{$post->body}}</textarea>
 
 				  </div>
 				
@@ -55,7 +55,6 @@
 			 </div>
 
 		</div>
-
 
 	</form>
 

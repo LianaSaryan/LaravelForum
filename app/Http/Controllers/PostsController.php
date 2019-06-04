@@ -37,12 +37,11 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
 
-        $post->title = request('title');
-        $post->body = request('body');
-
-        $post->save();
+        Post::create(request()->validate([
+            'title' => ['required', 'min:3'],
+            'body' => ['required', 'min:3'],
+        ]));
 
         return redirect('/posts');
     }
@@ -55,7 +54,8 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -64,9 +64,8 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        $post = Post::findorFail($id);
 
         return view('posts.edit', compact('post'));
     }
@@ -78,15 +77,10 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Post $post)
     {
-        
-        $post = Post::findorFail($id);
 
-        $post->title = request('title');
-        $post->body = request('body');
-
-        $post->save();
+        $post->update(request(['title', 'body']));
 
         return redirect('/posts');
     }
@@ -97,9 +91,9 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id1)
+    public function destroy(Post $post)
     {
-        Post::findorFail($id)->delete();
+        $post->delete();
 
         return redirect('/posts');
     }
