@@ -25,6 +25,6 @@ class PostCommentsController extends Controller
     	$post = \App\Post::find($comment->post_id);
     	$comment->delete();
 
-    	return view('posts.show', compact('post'));
+    	return back();
     }
 }

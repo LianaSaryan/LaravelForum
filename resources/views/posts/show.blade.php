@@ -12,9 +12,9 @@
 		</p>
 	@endif
 
+	<br><h3>Comments</h3><br>
 	@if ($post->comments->count())
 		<div>	
-			<br><h3>Comments</h3><br>
 			@foreach($post->comments as $comment)
 			<div>
 				<form method="POST" action="/comments/{{ $comment->id }}">
@@ -29,6 +29,7 @@
 						 	 <div class="content">{{ $comment->body }}</div>
 						 	 	@if($comment -> owner_id == auth()->id())
 									<button type="submit" class="button">Delete</button>
+
 								@endif
 						 </div>
 
