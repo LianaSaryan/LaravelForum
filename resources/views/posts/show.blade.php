@@ -6,9 +6,11 @@
 
 	<div class="content">{{ $post->body }}</div>
 
-	<p>
-		<a href="/posts/{{ $post->id }}/edit">Edit</a>
-	</p>
+	@if($post -> owner_id == auth()->id())
+		<p>
+			<a href="/posts/{{ $post->id }}/edit">Edit</a>
+		</p>
+	@endif
 
 	@if ($post->comments->count())
 		<div>	
@@ -25,8 +27,9 @@
 						 <div class="control">
 
 						 	 <div class="content">{{ $comment->body }}</div>
-						 	 <button type="submit" class="button">Delete</button>
-
+						 	 	@if($comment -> owner_id == auth()->id())
+									<button type="submit" class="button">Delete</button>
+								@endif
 						 </div>
 
 					</div>

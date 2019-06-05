@@ -26,12 +26,6 @@ Route::resource('users', 'UsersController');
 
 Route::resource('/profile', 'UsersController');
 
-
-/*
-Route::get('/posts', 'PostsController@index');
-Route::post('/posts', 'PostsController@store');
-Route::get('/posts/create', 'PostsController@create');
-*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

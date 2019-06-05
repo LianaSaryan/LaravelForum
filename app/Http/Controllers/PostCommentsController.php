@@ -13,6 +13,8 @@ class PostCommentsController extends Controller
 	{
 		$attributes = request()->validate(['body' => ['required', 'min:3']]);
 
+		$attributes['owner_id'] = auth()->id();
+
 		$post->addComment($attributes);
 
 		return back();
