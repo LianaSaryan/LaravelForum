@@ -15,6 +15,8 @@ class PostCommentsController extends Controller
 
 		$attributes['owner_id'] = auth()->id();
 
+		$attributes['comment_belongs_to'] = $post->id;
+
 		$post->addComment($attributes);
 
 		return back();
