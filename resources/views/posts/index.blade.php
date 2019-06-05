@@ -11,6 +11,25 @@
 		</a>
 		<small><br>{{ $post-> updated_at}}</small>
 		<br>{{ $post-> body }}
+
+		@if(auth()->user()->isAdmin == 1)
+			<form method="POST" action="/posts/{{ $post->id }}">
+
+			@method('DELETE')
+			@csrf
+
+			<div class="field">
+
+				 <div class="control">
+
+				 	  <button type="submit" class="button">Delete Post</button>
+
+				 </div>
+
+			</div>
+			</form>
+		@endif
+		
 	</div>	
 	@endforeach
 

@@ -39,10 +39,14 @@ class LoginController extends Controller
 
     public function authenticated()
     {
-        if(auth()->user())
+        if(auth()->user()->isAdmin == 1)
+        {
+            return view('admin');
+        } 
+        else
         {
             return redirect('/posts');
-        } 
+        }
 
     }
     // public function showLoginForm()

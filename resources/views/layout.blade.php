@@ -14,7 +14,13 @@
 	<div id="app">
             <nav class="navbar has-shadow">
                 <div class="container">
+
+
                     <div class="navbar-brand">
+                        @if(auth()->user()->isAdmin == 1)
+                            <div class="navbar-item">ADMIN ROUTE</div>
+                            <a href="{{ url('/users') }}" class="navbar-item">{{ 'Users' }}</a>       
+                        @endif
                         <a href="{{ url('/posts') }}" class="navbar-item">{{ 'Posts' }}</a>
                         <a href="{{ url('/profile') }}" class="navbar-item">{{ 'My Profile' }}</a>
 

@@ -2,24 +2,17 @@
 
 @section('content')
 
-	<h1 class="title">My Profile</h1>
+	<h1 class="title">Users</h1>
 
+	@foreach ($users as $user)
 	<div class = "container">
-			<h3>First Name: {{ $user-> first_name}}</h3><br>
-
-			<h3>Last Name: {{ $user-> last_name}}</h3><br>
-
-			<h3>Username: {{ $user-> username}}</h3><br>
-
-			<h3>Email: {{ $user-> email}}</h3><br>
-
-			<h3>Biography: {{ $user-> biography }}</h3><br>
-
+		<a href="/users/{{ $user-> id }}"><br>
+			<h3>{{ $user-> username }}</h3>
 		</a>
-
-	<p>
-		<a href="/users/{{ $user->id }}/edit">Edit</a>
-	</p>
-
 	</div>	
+	@endforeach
+<!-- 
+	<p>
+		<a href="/posts/create">Create Post</a>
+	</p> -->
 @endsection

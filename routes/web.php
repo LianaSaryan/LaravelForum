@@ -24,9 +24,10 @@ Route::post('posts/{post}/comments', 'PostCommentsController@store');
 
 Route::resource('users', 'UsersController');
 
-Route::resource('/profile', 'UsersController');
+Route::get('/profile', 'UsersController@profile');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('admin/routes', 'HomeController@admin')->middleware('admin');

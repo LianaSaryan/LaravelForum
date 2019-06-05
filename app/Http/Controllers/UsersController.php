@@ -9,20 +9,13 @@ class UsersController extends Controller
 {
 	public function index()
     {
-        $user = auth()->user();
+        $users = \App\User::all();
 
-        return view('users.index', compact('user'));
-    }
-
-    public function show(User $user)
-    {
-    	//dd('hello');
-    	//return view('users.show', compact('user'));
+        return view('users.index', compact('users'));
     }
 
     public function edit(User $user)
     {
-
         return view('users.edit', compact('user'));
     }
 
@@ -34,6 +27,26 @@ class UsersController extends Controller
         ]));
 
         return redirect('/profile');
+    }
+
+    public function show(User $user)
+    {
+        return view('users.show', compact('user'));
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect('/users');
+    }
+
+
+    public function profile()
+    {
+        $user = auth()->user();
+
+        return view('users.profile', compact('user'));
     }
 
 }
