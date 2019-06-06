@@ -60,7 +60,24 @@
 
 					</form>
 
+					<form method="POST" action="/users/{{ $user->id }}">
+
+					@method('DELETE')
+					@csrf
+
+					<div class="field">
+
+						 <div class="control">
+
+						 	  <button type="submit" class="button">Delete User Account</button>
+
+					</div>
+
+			</div>
+
+		</form>
 				</div>
+
 			@endif
 
 	</div>
