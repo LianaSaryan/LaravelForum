@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 
 Route::resource('posts', 'PostsController');
 
@@ -26,7 +27,7 @@ Route::resource('users', 'UsersController');
 
 Route::get('/profile', 'UsersController@profile');
 
-Auth::routes();
+Route::patch('/user/edit/{id}/setRole','UsersController@setRole');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

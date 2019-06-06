@@ -49,4 +49,14 @@ class UsersController extends Controller
         return view('users.profile', compact('user'));
     }
 
+    public function setRole()
+    {
+        $user = auth()->user();
+        //dd(request()->all());
+
+
+        $user-> isAdmin(request()->has('isAdmin'));
+
+        return back();
+    }
 }
