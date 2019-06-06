@@ -27,7 +27,7 @@ Route::resource('users', 'UsersController');
 
 Route::get('/profile', 'UsersController@profile');
 
-Route::patch('/user/edit/{id}/setRole','UsersController@setRole');
+Route::patch('/users/edit/setRole/{id}','UsersController@setRole');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

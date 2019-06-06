@@ -33,35 +33,36 @@
 			@if(auth()->user()->id !== $user-> id)
 				<div>
 					<h3>Set Role</h3>
-					<form method="POST" action="/user/edit/{{ $user->id }}/setRole">
+					<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
 
 						@method('PATCH')
 						@csrf
-						
+
 						<label class="checkbox" for="isAdmin">
 
 						  	<input type="checkbox" name="isAdmin" onChange="this.form.submit()" {{$user->isAdmin ? 'checked' : ''}}>
 						  		Admin 
 						</label><br>
-					
+
 					</form>
 
-					<form method="POST" action="/user/edit/{{ $user->id }}/setRole">
+					<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
 
 						@method('PATCH')
 						@csrf
-						
+
 						<label class="checkbox" for="normalUser">
 
 						  	<input type="checkbox" name="normalUser" onChange="this.form.submit()" {{$user->isAdmin ? '' : 'checked'}}>
 						  		Normal User 
 						</label><br>
-				
-					
+
+
 					</form>
-						
+
 				</div>
 			@endif
-		</a>
+
+	</div>
 
 @endsection

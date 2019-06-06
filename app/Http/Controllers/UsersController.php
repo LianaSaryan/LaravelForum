@@ -49,11 +49,9 @@ class UsersController extends Controller
         return view('users.profile', compact('user'));
     }
 
-    public function setRole()
+    public function setRole($id)
     {
-        $user = auth()->user();
-        //dd(request()->all());
-
+        $user = \App\User::find($id);
 
         $user-> isAdmin(request()->has('isAdmin'));
 
