@@ -76,7 +76,7 @@ class RegisterController extends Controller
         ]);
 
 
-        \Mail::to('lianasaryan@yahoo.com')->send(
+        \Mail::to($user->email)->send(
 
             new UserCreated($user)
         );
