@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Mail\UserDeleted;
 
 class UsersController extends Controller
 {
@@ -36,6 +37,11 @@ class UsersController extends Controller
 
     public function destroy(User $user)
     {
+        \Mail::to($user->email)->send(
+
+            new UserDeleted($user)
+        );
+
         $user->delete();
 
         return redirect('/users');
