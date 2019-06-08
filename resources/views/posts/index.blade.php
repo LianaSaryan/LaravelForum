@@ -2,14 +2,16 @@
 
 @section('content')
 
-	<h1 class="title">Posts</h1>
+	<h1>Posts</h1>
+
+	<div class="container">
 
 	@foreach ($posts as $post)
-	<div class = "container">
-		<a href="/posts/{{ $post-> id }}"><br>
-			<h3>{{ $post-> title }}</h3>
+	<div class = "well">
+		<a href="/posts/{{ $post-> id }}">
+			<h2>{{ $post-> title }}</h2>
 		</a>
-		<small><br>{{ $post-> updated_at}}</small>
+		<small>{{ $post-> updated_at}}</small><br>
 		<br>{{ $post-> body }}
 
 		@if(auth()->user()->isAdmin == 1)
@@ -22,7 +24,7 @@
 
 				 <div class="control">
 
-				 	  <button type="submit" class="button">Delete Post</button>
+				 	  <button type="submit" class="btn btn-danger btn pull-right">Delete Post</button>
 
 				 </div>
 
@@ -33,7 +35,8 @@
 	</div>	
 	@endforeach
 
+	</div>
 	<p>
-		<a href="/posts/create">Create Post</a>
+		<a href="/posts/create" class="btn btn-primary">Create Post</a>
 	</p>
 @endsection

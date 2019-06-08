@@ -2,11 +2,12 @@
 
 @section('content')
 	
-	<h1 class="title"> User Information</h1>
+	<div class="container">
+	<h1> User Information</h1>
 	
-	<h1 class="User">Username: {{ $user->username }}</h1><br>
+	<div class="well">
+	<h3>Username: {{ $user->username }}</h1><br>
 
-	<div class = "container">
 
 			<h3>First Name: {{ $user-> first_name}}</h3><br>
 
@@ -30,9 +31,12 @@
 				
 			@endif
 
+	</div>
+
 			@if(auth()->user()->id !== $user-> id)
-				<div>
-					<h3>Set Role</h3>
+				<div class="container">
+					<h3>Set Role</h3><br>
+					<div class="well">
 					<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
 
 						@method('PATCH')
@@ -56,11 +60,14 @@
 						  	<input type="checkbox" name="normalUser" onChange="this.form.submit()" {{$user->isAdmin ? '' : 'checked'}}>
 						  		Normal User 
 						</label><br>
+		
+				</form>
+			</div>
+	</div>
 
-
-					</form>
-
+		<div class="container">
 					<form method="POST" action="/users/{{ $user->id }}">
+
 
 					@method('DELETE')
 					@csrf
@@ -69,12 +76,13 @@
 
 						 <div class="control">
 
-						 	  <button type="submit" class="button">Delete User Account</button>
+						 	  <button type="submit" class="btn btn-danger">Delete User Account</button>
 
 					</div>
 
 			</div>
 
+		</div>
 		</form>
 				</div>
 

@@ -2,10 +2,10 @@
 
 @section('content')
 
-	<h1 class="title">My Profile</h1>
-
 	<div class = "container">
+	<h1>My Profile</h1>
 
+		<div class="well"> 
 			@if(auth()->user()->isAdmin == 1)
 
 				<h2>Admin</h2><br>
@@ -22,11 +22,11 @@
 
 			<h3>Biography: {{ $user-> biography }}</h3><br>
 
-		</a>
+		</div>
 
-	<p>
-		<a href="/users/{{ $user->id }}/edit">Edit</a>
-	</p>
+		<p>
+			<a href="/users/{{ $user->id }}/edit" class="btn btn-primary">Edit</a>
+		</p>
 
 	</div>	
 @endsection

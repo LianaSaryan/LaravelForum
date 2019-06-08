@@ -7,7 +7,7 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://bootswatch.com/3/cerulean/bootstrap.min.css" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    META+Labs Forum
+                    MEAT LABS Inc. Forum
                 </div>
             </div>
         </div>
