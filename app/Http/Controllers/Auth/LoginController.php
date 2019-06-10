@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use App\Post;
+
 class LoginController extends Controller
 {
     /*
@@ -41,7 +43,7 @@ class LoginController extends Controller
     {
         if(auth()->user()->isAdmin == 1)
         {
-            return view('admin');
+            return redirect('/posts');
         } 
         else
         {

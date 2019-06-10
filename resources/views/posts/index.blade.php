@@ -2,9 +2,9 @@
 
 @section('content')
 
-	<h1>Posts</h1>
+	<div class="container" id="content">
 
-	<div class="container">
+	<h1>Posts</h1>
 
 	@foreach ($posts as $post)
 	<div class = "well">
@@ -35,8 +35,10 @@
 	</div>	
 	@endforeach
 
-	</div>
+	
 	<p>
 		<a href="/posts/create" class="btn btn-primary">Create Post</a>
 	</p>
+	
+	</div>
 @endsection

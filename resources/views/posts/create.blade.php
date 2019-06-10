@@ -1,9 +1,11 @@
 @extends('layout')
 
 @section('content')
+
+<div class="container">
+	
 	<h1 class="title">Create a New Post</h1>
 
-	<div class="container">
 		<form method="POST" action="/posts">
 
 			{{ csrf_field() }}
