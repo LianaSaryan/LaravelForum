@@ -4,41 +4,50 @@
 
 	<div class="container" id="content">
 
-	<h1>Posts</h1>
+		<h1>Posts</h1>
 
-	@foreach ($posts as $post)
-	<div class = "well">
-		<a href="/posts/{{ $post-> id }}">
-			<h2>{{ $post-> title }}</h2>
-		</a>
-		<small>{{ $post-> updated_at}}</small><br>
-		<br>{{ $post-> body }}
+		@foreach ($posts as $post)
+		<div class = "well">
 
-		@if(auth()->user()->isAdmin == 1)
-			<form method="POST" action="/posts/{{ $post->id }}">
+			<a href="/posts/{{ $post-> id }}">
+				<h2>{{ $post-> title }}</h2>
+			</a>
 
-			@method('DELETE')
-			@csrf
+			<small>{{ $post-> updated_at}}</small><br>
+			<br>{{ $post-> body }}
 
-			<div class="field">
+			@if(auth()->user()->isAdmin == 1)
+				<form method="POST" action="/posts/{{ $post->id }}">
 
-				 <div class="control">
+					@method('DELETE')
+					@csrf
 
-				 	  <button type="submit" class="btn btn-danger btn pull-right">Delete Post</button>
+					<div class="field">
 
-				 </div>
+						 <div class="control">
 
-			</div>
-			</form>
-		@endif
+						 	<div class="row">
+		        					
+		        					<div class="col-md-10 col-md-offset-2">
+						 	  				
+						 	  				<button type="submit" class="btn btn-danger btn pull-right">Delete Post</button>
+						 	  				
+						 	  		</div>
+							</div>
+
+						 </div>
+
+					</div>
+				</form>
+			@endif
+			
+		</div>	
+		@endforeach
+
 		
-	</div>	
-	@endforeach
-
-	
-	<p>
-		<a href="/posts/create" class="btn btn-primary">Create Post</a>
-	</p>
+		<p>
+			<a href="/posts/create" class="btn btn-primary">Create Post</a>
+		</p>
 	
 	</div>
 @endsection

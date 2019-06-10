@@ -51,8 +51,4 @@ class LoginController extends Controller
         }
 
     }
-    // public function showLoginForm()
-    // {
-    //     return view('posts.index');
-    // }
 }

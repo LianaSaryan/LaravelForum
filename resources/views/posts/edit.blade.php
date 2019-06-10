@@ -1,40 +1,41 @@
 @extends('layout')
 
 @section('content')
+
 	<h1 class="title">Edit Post</h1>
 
 	<form method="POST" action="/posts/{{ $post->id }}" style="margin-bottom: 1em;">
 		@method('PATCH')
 		@csrf
-		<div class="container">
+		<div class="form-group">
 
 				 <label class="label" for="title">Title</label>
 
 				 <div class="control">
 
-				    <input type="text" class="input" name="title" placeholder="Title" value="{{ $post->title }}" required>
+				    <input type="text" class="input, form-control" name="title" placeholder="Title" value="{{ $post->title }}" required>
 
 				  </div>
 				
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 
 				 <label class="label" for="body">Body</label>
 
 				 <div class="control">
 
-				    <textarea name="body" class="textarea" required>{{$post->body}}</textarea>
+				    <textarea name="body" class="textarea, form-control" required>{{$post->body}}</textarea>
 
 				  </div>
 				
 			</div>
 
-			<div class="field">
+			<div class="form-group">
 
 				 <div class="control">
 
-				 	  <button type="submit" class="button is-link">Update Post</button>
+				 	  <button type="submit" class="btn btn-primary">Update Post</button>
 
 				 </div>
 
@@ -50,7 +51,7 @@
 
 			 <div class="control">
 
-			 	  <button type="submit" class="button">Delete Post</button>
+			 	  <button type="submit" class="btn btn-danger">Delete Post</button>
 
 			 </div>
 

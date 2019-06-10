@@ -3,8 +3,6 @@
 @section('content')
 	<h1 class="title">Edit User Information</h1>
 
-	<div class="container"></div>
-
 	<form method="POST" action="/users/{{ $user->id }}" style="margin-bottom: 1em;">
 		@method('PATCH')
 		@csrf
