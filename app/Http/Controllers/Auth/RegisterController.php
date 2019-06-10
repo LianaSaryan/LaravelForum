@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Laravel\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use Laravel\User;
+use Laravel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Mail\UserCreated;
+use Laravel\Mail\UserCreated;
 
 
 class RegisterController extends Controller
@@ -63,7 +63,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \Laravel\User
      */
     protected function create(array $data)
     {

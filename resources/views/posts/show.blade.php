@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 	<div class="container">
 
 	<h1>{{ $post->title }}</h1>
@@ -11,6 +12,7 @@
 				$owner_id = $post->owner_id;
 				$username  = App\User::find($owner_id)->username;
 		?>
+
 		<br>By: <b>{{$username }}</b>
 
 		<div class="well">
@@ -30,6 +32,7 @@
 			<div class="well">
 			
 				@if ($post->comments->count())
+
 					<div>	
 						@foreach($post->comments as $comment)
 						<div>
@@ -64,21 +67,21 @@
 									 	 		</div>
 
 									 	 	</div>
-												
+								
 											@endif
 								</div>
-
 							</form>
-						</div>
-							
+						</div>	
 						@endforeach
 					</div>
 				@endif
 
 			</div>
+
 		<!-- {add a new comment form} -->
 		<br>
 		<br>
+		
 		<form method = "POST" action="/posts/{{ $post->id }}/comments" class="box">
 			@csrf
 
