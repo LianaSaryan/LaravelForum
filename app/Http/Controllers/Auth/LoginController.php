@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
-use Laravel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-use Laravel\Post;
+use App\Post;
 
 class LoginController extends Controller
 {

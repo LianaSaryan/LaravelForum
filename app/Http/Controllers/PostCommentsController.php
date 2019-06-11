@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Http\Controllers;
+namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Laravel\Comment;
-use Laravel\Post;
+use App\Comment;
+use App\Post;
 
 class PostCommentsController extends Controller
 {
@@ -24,7 +24,7 @@ class PostCommentsController extends Controller
 
     public function destroy(Comment $comment)
     {
-    	$post = \Laravel\Post::find($comment->post_id);
+    	$post = \App\Post::find($comment->post_id);
     	$comment->delete();
 
     	return back();

@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Laravel\Post;
+use App\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -19,7 +19,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = \Laravel\Post::all();
+        $posts = \App\Post::all();
 
         return view('posts.index', compact('posts'));
     }
@@ -58,7 +58,7 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Laravel\Post  $post
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
@@ -70,7 +70,7 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Laravel\Post  $post
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
@@ -83,7 +83,7 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Laravel\Post  $post
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function update(Post $post)
@@ -97,7 +97,7 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Laravel\Post  $post
+     * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)

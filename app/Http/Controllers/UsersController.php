@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Laravel\User;
-use Laravel\Mail\UserDeleted;
+use App\User;
+use App\Mail\UserDeleted;
 
 class UsersController extends Controller
 {
 	public function index()
     {
-        $users = \Laravel\User::all();
+        $users = \App\User::all();
 
         return view('users.index', compact('users'));
     }
@@ -57,7 +57,7 @@ class UsersController extends Controller
 
     public function setRole($id)
     {
-        $user = \Laravel\User::find($id);
+        $user = \App\User::find($id);
 
         $user-> isAdmin(request()->has('isAdmin'));
 

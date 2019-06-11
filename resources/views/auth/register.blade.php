@@ -4,7 +4,7 @@
 <div class="container" style="width:800px; margin:0 auto">
     <div class="row justify-content-center">
             <div class="card">
-                <div class="card-header"><h3>{{ __('Register') }}</h3></div><br>
+                <div class="card-header">{{ __('Register') }}</div><br>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4, btn pull-right">
+                            <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
