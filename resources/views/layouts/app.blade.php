@@ -31,16 +31,9 @@
                 <span class = "icon bar"></span>
                 <span class = "icon bar"></span>
               </button>
-              <a class = "navbar-brand" href="#">META Labs Forum</a>
+              <a class = "navbar-brand">MEAT Labs Inc. Forum</a>
             </div>
             <div id ="navbar" class = "collapse navbar-collapse">
-              <u1 class = "nav navbar-nav navbar-left">
-                <li>
-                  <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
-                    </a>
-                </li>
-              </u1>
 
               <u1 class = "nav navbar-nav navbar-right">
                 @guest

@@ -40,6 +40,7 @@
 
 								<div class="field">
 
+									<br><small>{{ $comment-> updated_at}}</small>
 									<?php  
 										$owner_id = $comment->owner_id;
 										$username  = App\User::find($owner_id)->username;

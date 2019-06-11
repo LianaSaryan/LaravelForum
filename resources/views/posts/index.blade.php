@@ -14,6 +14,12 @@
 			</a>
 
 			<small>{{ $post-> updated_at}}</small><br>
+
+			<?php  
+				$owner_id = $post->owner_id;
+				$username  = App\User::find($owner_id)->username;
+			?>	
+			By: <b>{{$username }}</b><br>
 			<br>{{ $post-> body }}
 
 			@if(auth()->user()->isAdmin == 1)
