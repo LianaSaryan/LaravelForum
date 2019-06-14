@@ -3,11 +3,10 @@
 @section('content')
 	
 	<div class="container">
-	<h1> User Information</h1>
-	
-	<div class="well">
-	<h3>Username: {{ $user->username }}</h1><br>
-
+		<h1> User Information</h1>
+		
+		<div class="well">
+			<h3>Username: {{ $user->username }}</h3><br>
 
 			<h3>First Name: {{ $user-> first_name}}</h3><br>
 
@@ -31,39 +30,39 @@
 				
 			@endif
 
-	</div>
+		</div>
 
-			@if(auth()->user()->id !== $user-> id)
-				<div class="container">
-					<h3>Set Role</h3><br>
-					<div class="well">
-					<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
+		@if(auth()->user()->id !== $user-> id)
+		<div class="container">
+			<h3>Set Role</h3><br>
+			<div class="well">
+				<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
 
-						@method('PATCH')
-						@csrf
+					@method('PATCH')
+					@csrf
 
-						<label class="checkbox" for="isAdmin">
+					<label class="checkbox" for="isAdmin">
 
-						  	<input type="checkbox" name="isAdmin" onChange="this.form.submit()" {{$user->isAdmin ? 'checked' : ''}}>
-						  		Admin 
-						</label><br>
+					  	<input type="checkbox" name="isAdmin" onChange="this.form.submit()" {{$user->isAdmin ? 'checked' : ''}}>
+					  		Admin 
+					</label><br>
 
-					</form>
-
-					<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
-
-						@method('PATCH')
-						@csrf
-
-						<label class="checkbox" for="normalUser">
-
-						  	<input type="checkbox" name="normalUser" onChange="this.form.submit()" {{$user->isAdmin ? '' : 'checked'}}>
-						  		Normal User 
-						</label><br>
-		
 				</form>
+
+				<form method="POST" action="/users/edit/setRole/{{ $user->id }}">
+
+					@method('PATCH')
+					@csrf
+
+					<label class="checkbox" for="normalUser">
+
+					  	<input type="checkbox" name="normalUser" onChange="this.form.submit()" {{$user->isAdmin ? '' : 'checked'}}>
+					  		Normal User 
+					</label><br>
+
+			</form>
 			</div>
-	</div>
+		</div>
 
 		<div class="container">
 					<form method="POST" action="/users/{{ $user->id }}">
@@ -83,10 +82,8 @@
 			</div>
 
 		</div>
-		</form>
-				</div>
 
-			@endif
+		@endif
 
 	</div>
 

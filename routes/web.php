@@ -30,5 +30,3 @@ Route::get('/profile', 'UsersController@profile');
 Route::patch('/users/edit/setRole/{id}','UsersController@setRole');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('admin/routes', 'HomeController@admin')->middleware('admin');

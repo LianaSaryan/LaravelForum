@@ -54,6 +54,6 @@
 		<p>
 			<a href="/posts/create" class="btn btn-primary">Create Post</a>
 		</p>
-	
+
 	</div>
 @endsection

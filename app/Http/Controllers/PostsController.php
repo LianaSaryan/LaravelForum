@@ -10,7 +10,7 @@ class PostsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        //$this->middleware('can:update,project')->except(['index','create','store']);
+        
     }
     /**
      * Display a listing of the resource.
