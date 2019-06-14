@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         $this->update(compact('isAdmin'));
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'id');
+    }
 }
