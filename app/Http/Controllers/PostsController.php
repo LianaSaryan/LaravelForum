@@ -73,6 +73,7 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
+    
     public function edit(Post $post)
     {
 

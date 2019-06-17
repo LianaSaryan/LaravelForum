@@ -6,6 +6,10 @@
 
 		<h1>Posts</h1>
 
+		<p>
+			<a href="/posts/create" class="btn btn-primary">Create Post</a>
+		</p>
+
 		@foreach ($posts as $post)
 		<div class = "well">
 
@@ -49,11 +53,6 @@
 			
 		</div>	
 		@endforeach
-
-		
-		<p>
-			<a href="/posts/create" class="btn btn-primary">Create Post</a>
-		</p>
 
 	</div>
 @endsection
